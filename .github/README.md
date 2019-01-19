@@ -7,3 +7,5 @@ Muotoilu tukee yleisimpiä lähdemateriaaleja kuten artikkeleita, kirjoja sekä 
 Tuetut kielet ovat suomi ja englanti (US/UK), ja kirjoituskieltä voi vaihtaa Wordin Zotero-liitännäisen asetuksista. Kielen vaihtaminen näkyy viittauksissa esimerkiksi viitatun sivun lyhenteen vaihtumisena s. (suomi) ja p./pp. (englanti).
 
 Muotoilun lisääminen Zoteroon: 'preferences' > 'cite' > + > etsi tallennettu "TAU nimi-vuosi.csl".
+
+Lataa: codeload.github.com/hekare/TAU-nimi-vuosi/zip/master
