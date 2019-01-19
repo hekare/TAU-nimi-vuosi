@@ -1,4 +1,4 @@
-# TAU-nimi-vusi
+# TAU-nimi-vuosi
 
 Tampereen yliopiston nimi-vuosi muotoilu Zoteroon. Muotoilua käyttävät ainakin tietojohtamisen ja tuotantotalouden opintosuunnat.
 
