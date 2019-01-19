@@ -8,4 +8,4 @@ Tuetut kielet ovat suomi ja englanti (US/UK), ja kirjoituskieltä voi vaihtaa Wo
 
 Muotoilun lisääminen Zoteroon: 'preferences' > 'cite' > + > etsi tallennettu "TAU nimi-vuosi.csl".
 
-Lataa: codeload.github.com/hekare/TAU-nimi-vuosi/zip/master
+[Lataa muotoilu](http://codeload.github.com/hekare/TAU-nimi-vuosi/zip/master)
