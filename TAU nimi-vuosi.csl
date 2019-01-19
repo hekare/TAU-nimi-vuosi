@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="never">
+
+	<!-- INFO -->
+	<info>
+		<title>Tampereen yliopisto - nimi-vuosi (tuta, tijo)</title>
+		<title-short>TAU nimi-vuosi</title-short>
+		<author>
+			<name>Heikki Reijonen</name>
+			<email>hekare@outlook.com</email>
+		</author>
+		<category citation-format="author-date"/>
+		<category field="information and knowledge management"/>
+		<category field="industrial engineering and management"/>
+		<category field="generic-base"/>
+		<id>http://www.zotero.org/styles/TAU-nimi-vuosi</id>
+		<updated>2019-01-18T22:52:10+00:00</updated>
+		<summary>
+		Tämä viittauspohja on tehty Tampereen yliopiston sekä tuotantotalouden ja tietojohtamisen viittausohjeistusta noudattaen. Tällä hetkellä viittauspohja kattaa yleisimmät lähdemateriaalityypit, kuten artikkelit ja kirjat, sekä verkkolähteet.
+
+		Pohja tukee suomen ja englannin kielistä viittaamista.
+		</summary>
+	</info>
+
+	<!-- PAIKALLISET: kieliasetukset -->
+	<locale xml:lang="en">
+		<terms>
+			<term name="available">available</term>
+			<term name="read-date">accessed</term>
+			<term name="et-al">et al.</term>
+		</terms>
+	</locale>
+
+	<locale xml:lang="fi">
+		<terms>
+			<term name="available">saatavissa</term>
+			<term name="read-date">viitattu</term>
+			<term name="page" form="short">
+				<multiple>s.</multiple>
+				<single>s.</single>
+			</term>
+			<term name="et-al">et al.</term>
+		</terms>
+	</locale>
+
+
+
+
+	<!-- AUTHORS -->
+	<macro name="author">
+		<names variable="author">
+			<name and="symbol" delimiter-precedes-et-al="never" delimiter-precedes-last="never" initialize-with=". " name-as-sort-order="all"/>
+		</names>
+	</macro>
+
+	<macro name="author-short">
+		<names variable="author">
+			<name form="short" and="symbol" delimiter=", " initialize-with=". "/>
+		</names>
+	</macro>
+
+	<!-- ISSUED OK -->
+	<macro name="issued-year">
+		<choose>
+			<if variable="issued">
+				<date date-parts="year" variable="issued">
+					<date-part name="year"/>
+				</date>
+				<text variable="year-suffix"/>
+			</if>
+		</choose>
+	</macro>
+
+	<!-- TITLE -->
+	<macro name="title">
+		<text variable="title"/>
+	</macro>
+
+	<!-- CONTAINERS -->
+	<macro name="containers">
+		<group>
+			<text variable="container-title" text-case="title" prefix=" "/>
+		</group>
+	</macro>
+
+	<!-- LOCATORS -->
+	<macro name="locators">
+		<group delimiter=", ">
+			<group>
+				<text variable="volume" prefix="Vol. "/>
+				<text variable="issue" prefix="(" suffix=")"/>
+			</group>
+			<group>
+				<text term="page" form="short"/>
+				<text variable="page"/>
+			</group>
+		</group>
+	</macro>
+
+	<macro name="citation-locator">
+		<group>
+			<choose>
+				<if locator="chapter">
+					<label variable="locator" prefix=", " suffix=" "/>
+				</if>
+				<else>
+					<label variable="locator" form="short" prefix=", "/>
+				</else>
+			</choose>
+			<text variable="locator"/>
+		</group>
+	</macro>
+
+	<!-- PUBLISHER -->
+	<macro name="publisher">
+		<choose>
+			<if type="report thesis book">
+				<group delimiter=". ">
+					<text variable="publisher-place"/>
+					<text variable="publisher"/>
+				</group>
+			</if>
+		</choose>
+	</macro>
+
+
+	<!-- ACCESS -->
+	<macro name="access">
+		<choose>
+			<if type="webpage post-weblog">
+					<group>
+						<text term="available" text-case="capitalize-first"/>
+						<group prefix=" (" suffix="): ">
+							<text term="read-date" suffix=" "/>
+							<date variable="accessed" delimiter=".">
+								<date-part name="day"/>
+								<date-part name="month" form="numeric"/>
+								<date-part name="year"/>
+							</date>
+						</group>
+						<text variable="URL"/>
+					</group>
+			</if>
+		</choose>
+	</macro>
+
+
+
+	<!-- CITATION -->
+	<citation et-al-min="3" et-al-use-first="1" et-al-subsequent-min="3" et-al-subsequent-use-first="1" disambiguate-add-year-suffix="true" givenname-disambiguation-rule="primary-name" collapse="year">
+		<sort>
+			<key macro="issued-year"/>
+			<key macro="author"/>
+		</sort>
+		<layout prefix="(" suffix=")" delimiter="; ">
+			<group>
+				<group delimiter=" ">
+					<text macro="author-short"/>
+					<text macro="issued-year"/>
+				</group>
+				<text macro="citation-locator"/>
+			</group>
+		</layout>
+	</citation>
+
+	<!-- SISÄLLYSLUETTELO -->
+	<bibliography hanging-indent="false" entry-spacing="1" line-spacing="1">
+		<sort>
+			<key macro="author"/>
+			<key macro="issued-year" sort="ascending"/>
+			<key macro="title"/>
+		</sort>
+		<layout>
+			<group delimiter=" " suffix=".">
+				<group suffix="." delimiter=" ">
+					<text macro="author"/>
+					<text macro="issued-year" prefix="(" suffix=")"/>
+				</group>
+				<group delimiter=". ">
+					<text macro="title"/>
+					<text macro="containers"/>
+					<text macro="locators"/>
+					<text macro="publisher"/>
+					<text macro="access"/>
+				</group>
+			</group>
+		</layout>
+	</bibliography>
+
+
+
+</style>
