@@ -48,27 +48,32 @@
 
 	<!-- AUTHORS -->
 	<macro name="author">
-		<names variable="author">
-			<name and="symbol" delimiter-precedes-et-al="never" delimiter-precedes-last="never" initialize-with=". " name-as-sort-order="all"/>
-		</names>
+		<choose>
+			<names variable="author">
+				<name and="symbol" delimiter-precedes-et-al="never" delimiter-precedes-last="never" initialize-with=". " name-as-sort-order="all"/>
+				<substitute>
+					<text variable="title"/>
+				</substitute>
+			</names>
+		</choose>
 	</macro>
 
 	<macro name="author-short">
 		<names variable="author">
 			<name form="short" and="symbol" delimiter=", " initialize-with=". "/>
+			<substitute>
+				<text variable="title"/>
+			</substitute>
 		</names>
 	</macro>
 
-	<!-- ISSUED OK -->
+	<!-- ISSUED -->
 	<macro name="issued-year">
-		<choose>
-			<if variable="issued">
-				<date date-parts="year" variable="issued">
-					<date-part name="year"/>
-				</date>
-				<text variable="year-suffix"/>
-			</if>
-		</choose>
+		<if variable="issued">
+			<date date-parts="year" variable="issued">
+				<date-part name="year"/>
+			</date>
+		</if>
 	</macro>
 
 	<!-- TITLE -->
@@ -79,7 +84,12 @@
 	<!-- CONTAINERS -->
 	<macro name="containers">
 		<group>
-			<text variable="container-title" text-case="title" prefix=" "/>
+			<text variable="container-title"/>
+		</group>
+		<group>
+		<if container="webpage">
+			<text variable="genre" prefix=". "/>
+		</if>
 		</group>
 	</macro>
 
@@ -116,8 +126,8 @@
 		<choose>
 			<if type="report thesis book">
 				<group delimiter=". ">
-					<text variable="publisher-place"/>
 					<text variable="publisher"/>
+					<text variable="publisher-place"/>
 				</group>
 			</if>
 		</choose>
@@ -127,19 +137,19 @@
 	<!-- ACCESS -->
 	<macro name="access">
 		<choose>
-			<if type="webpage post-weblog">
-					<group>
-						<text term="available" text-case="capitalize-first"/>
-						<group prefix=" (" suffix="): ">
-							<text term="read-date" suffix=" "/>
-							<date variable="accessed" delimiter=".">
-								<date-part name="day"/>
-								<date-part name="month" form="numeric"/>
-								<date-part name="year"/>
-							</date>
-						</group>
-						<text variable="URL"/>
+			<if type="webpage post-weblog report">
+				<group>
+					<text term="available" text-case="capitalize-first"/>
+					<group prefix=" (" suffix=")">
+						<text term="read-date" suffix=" "/>
+						<date variable="accessed" delimiter=".">
+							<date-part name="day"/>
+							<date-part name="month" form="numeric"/>
+							<date-part name="year"/>
+						</date>
 					</group>
+					<text variable="URL" prefix=": "/>
+				</group>
 			</if>
 		</choose>
 	</macro>
