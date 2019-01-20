@@ -6,9 +6,7 @@ Muotoilu tukee yleisimpiä lähdemateriaaleja kuten artikkeleita, kirjoja sekä 
 
 Tuetut kielet ovat suomi ja englanti (US/UK), ja kirjoituskieltä voi vaihtaa Wordin Zotero-liitännäisen asetuksista. Kielen vaihtaminen näkyy viittauksissa esimerkiksi viitatun sivun lyhenteen vaihtumisena s. (suomi) ja p./pp. (englanti).
 
-Muotoilun lisääminen Zoteroon: 'preferences' > 'cite' > + > etsi tallennettu "TAU nimi-vuosi.csl".
-
-Lataa muotoilu [tästä.](http://codeload.github.com/hekare/TAU-nimi-vuosi/zip/master)
+Muotoilun lisääminen Zoteroon: 'preferences' > 'cite' > + > etsi tallennettu "TAU nimi-vuosi.csl". Lataa muotoilu [tästä.](http://codeload.github.com/hekare/TAU-nimi-vuosi/zip/master)
 
 # Esimerkkiviittaukset
 
@@ -16,8 +14,9 @@ Lataa muotoilu [tästä.](http://codeload.github.com/hekare/TAU-nimi-vuosi/zip/m
 
 - Raportti:       (Schroeck et al. 2012)
 - Artikkeli:      (Zeng & Glaister 2018)
-- Kirja:          (Laihonen et al. 2013, s.35–37)
+- Kirja:          (Saunders et al. 2009, s.114)
 - Verkkosivu:     (Foo 2012)
+- Verkkosivu ilman kirjoittajaa: (Data mining)
 - Vain vuosiluku/tekijä supistettu viittauksesta: Bernzen ja Krumova (2017) kirjoittavat…
 
 
@@ -25,9 +24,11 @@ Lataa muotoilu [tästä.](http://codeload.github.com/hekare/TAU-nimi-vuosi/zip/m
 
 Berntzen, L. & Krumova, M. (2017). Big Data from a Business Perspective. Information Systems. s.119–127.
 
+Data mining. Merriam-Webster. Sanakirja. Saatavissa (viitattu 17.10.2018): ht<span>tps://ww</span>w.merriam-webster.com/dictionary/data%20mining.
+
 Foo, M. (2012). How much can a 1 TB hard drive hold? PC Ninja. Saatavissa (viitattu 26.10.2018): ht<span>tp://www</span>.pcninja.us<span>/how-much-can-a-1-tb-hard-drive-hold/</span>.
 
-Laihonen, H., Hannula, M., Helander, N., Ilvonen, I., Jussila, J., Kukko, M., Kärkkäinen, H., Lönqvist, A., Myllärniemi, J., Pekkola, S., Virtanen, P., Vuori, V. & Yliniemi, T. (2013). Tietojohtaminen. Tampere. Tampereen teknillinen yliopisto, Tietojohtamisen tutkimuskeskus NOVI.
+Saunders, M., Lewis, P. & Thornhill, A. (2009). Research methods for business stu-dents, 5th ed. Prentice Hall. Harlow.
 
 Schroeck, M., Shockley, R., Smart, J., Romero-Morales, D. & Tufano, P. (2012). Analytics: The real-world use of big data - How innovative enterprises extract value from uncertain data. IBM Institute for Business Value.
 

@@ -10,8 +10,7 @@
 			<email>hekare@outlook.com</email>
 		</author>
 		<category citation-format="author-date"/>
-		<category field="information and knowledge management"/>
-		<category field="industrial engineering and management"/>
+		<category field="engineering"/>
 		<category field="generic-base"/>
 		<id>http://www.zotero.org/styles/TAU-nimi-vuosi</id>
 		<updated>2019-01-18T22:52:10+00:00</updated>
@@ -25,21 +24,18 @@
 	<!-- PAIKALLISET: kieliasetukset -->
 	<locale xml:lang="en">
 		<terms>
-			<term name="available">available</term>
-			<term name="read-date">accessed</term>
 			<term name="et-al">et al.</term>
 		</terms>
 	</locale>
 
 	<locale xml:lang="fi">
 		<terms>
-			<term name="available">saatavissa</term>
-			<term name="read-date">viitattu</term>
 			<term name="page" form="short">
-				<multiple>s.</multiple>
 				<single>s.</single>
+				<multiple>s.</multiple>
 			</term>
 			<term name="et-al">et al.</term>
+			<term name="edition" form="short">ed.</term>
 		</terms>
 	</locale>
 
@@ -48,14 +44,12 @@
 
 	<!-- AUTHORS -->
 	<macro name="author">
-		<choose>
-			<names variable="author">
-				<name and="symbol" delimiter-precedes-et-al="never" delimiter-precedes-last="never" initialize-with=". " name-as-sort-order="all"/>
-				<substitute>
-					<text variable="title"/>
-				</substitute>
-			</names>
-		</choose>
+		<names variable="author">
+			<name and="symbol" delimiter-precedes-et-al="never" delimiter-precedes-last="never" initialize-with=". " name-as-sort-order="all"/>
+			<substitute>
+				<text variable="title"/>
+			</substitute>
+		</names>
 	</macro>
 
 	<macro name="author-short">
@@ -69,28 +63,37 @@
 
 	<!-- ISSUED -->
 	<macro name="issued-year">
-		<if variable="issued">
-			<date date-parts="year" variable="issued">
+		<group>
+			<date date-parts="year" variable="issued" form="numeric">
 				<date-part name="year"/>
 			</date>
-		</if>
+		</group>
 	</macro>
 
 	<!-- TITLE -->
 	<macro name="title">
 		<text variable="title"/>
+		<choose>
+			<if type="book">
+				<group prefix=", " delimiter=" ">
+					<text variable="edition" suffix="th"/>
+					<text term="edition" form="short"/>
+				</group>
+			</if>	
+		</choose>
 	</macro>
+
 
 	<!-- CONTAINERS -->
 	<macro name="containers">
 		<group>
 			<text variable="container-title"/>
 		</group>
-		<group>
-		<if container="webpage">
-			<text variable="genre" prefix=". "/>
-		</if>
-		</group>
+		<choose>
+			<if type="webpage">
+				<text variable="genre" prefix=". " text-case="capitalize-first"/>
+			</if>
+		</choose>	
 	</macro>
 
 	<!-- LOCATORS -->
@@ -139,9 +142,9 @@
 		<choose>
 			<if type="webpage post-weblog report">
 				<group>
-					<text term="available" text-case="capitalize-first"/>
+					<text term="available at" text-case="capitalize-first"/>
 					<group prefix=" (" suffix=")">
-						<text term="read-date" suffix=" "/>
+						<text term="accessed" suffix=" "/>
 						<date variable="accessed" delimiter=".">
 							<date-part name="day"/>
 							<date-part name="month" form="numeric"/>
@@ -196,7 +199,4 @@
 			</group>
 		</layout>
 	</bibliography>
-
-
-
 </style>
